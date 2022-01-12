@@ -6,8 +6,8 @@ import { join } from 'path';
 const microserviceOptions = {
   transport: Transport.GRPC,
   options: {
-    package:'app',
-    protoPath: join(__dirname, '../src/app.proto'),
+    package:'pharmacy',
+    protoPath: join(__dirname, '../src/proto/pharmacy.proto'),
   }
 }
 

@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package pharmacy;
+
+message Pharmacy{
+    string cnpj = 1;
+    string name = 2;
+    string owner = 3;
+    string opening = 4;
+    string closed =5;
+    string address  = 6;
+    string telephone = 7;
+    string others = 8;
+    string logoUrl = 9;
+}
+
+message RegisterPharmacyRequest{
+    Pharmacy pharmacy = 1;
+}
+
+message ReadPharmacyRequest{
+    string cnpj = 1;
+}
+
+message UpdatePharmacyRequest{
+    Pharmacy pharmacy = 1;
+}
+
+message DeletePharmacyRequest{
+    string cnpj = 1;
+}
+
+
+message PharmacyResponse{
+    Pharmacy pharmacy = 1;
+}
+message Empty{
+
+}
+message DoneResponse{
+    bool done = 1;
+}
