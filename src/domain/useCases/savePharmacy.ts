@@ -7,9 +7,9 @@ export class SavePharmacy{
 
     async call(pharmacy:Pharmacy){
         try{ 
-            const alreadyExistPhamacy = await this.pharmacyRepository.findById(pharmacy.cnpj)
+            const alreadyExistPharmacy = await this.pharmacyRepository.findByCnpj(pharmacy.cnpj)
 
-            if(!alreadyExistPhamacy){
+            if(!alreadyExistPharmacy){
                 return await this.pharmacyRepository.save(pharmacy)
             }else{
                 return 'Pharmacy already exists'

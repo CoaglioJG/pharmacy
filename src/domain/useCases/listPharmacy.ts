@@ -1,13 +1,13 @@
 import { PharmacyRepository } from "../repositories/pharmacy.repository";
 
-export class GetPharmacy{
+export class ListPharmacy{
     constructor(private readonly pharmacyRepository: PharmacyRepository){}
 
-    async call(cnpj: string){
+    async call(){
         try{ 
-            const pharmacy = await this.pharmacyRepository.findByCnpj(cnpj);
+            const pharmacy = await this.pharmacyRepository.find();
 
-            if(!pharmacy) return 'pharmacy not found';
+            if(!pharmacy) return 'there are no registered pharmacies';
 
             return pharmacy;
         }catch(error){

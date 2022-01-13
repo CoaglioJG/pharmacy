@@ -1,7 +1,7 @@
 import { Global, Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { PharmacyRepository } from "src/domain/repositories/pharmacy.repository";
-import { PharmacyEntity } from "./entities/pharmacyEntity";
+import { PharmacyEntity } from "./entities/pharmacy.entity";
 import { PharmacyImpl } from "./mariadb/pharmacy.impl";
 
 @Global()

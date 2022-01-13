@@ -14,19 +14,19 @@ message Pharmacy{
     string logoUrl = 9;
 }
 
-message RegisterPharmacyRequest{
+message RegisterPharmacy{
     Pharmacy pharmacy = 1;
 }
 
-message ReadPharmacyRequest{
+message GetPharmacy{
     string cnpj = 1;
 }
 
-message UpdatePharmacyRequest{
+message UpdatePharmacy{
     Pharmacy pharmacy = 1;
 }
 
-message DeletePharmacyRequest{
+message DeletePharmacy{
     string cnpj = 1;
 }
 
@@ -39,4 +39,13 @@ message Empty{
 }
 message DoneResponse{
     bool done = 1;
+}
+
+
+service PharmacyService{
+    rpc create(RegisterPharmacy) returns (PharmacyResponse);
+    rpc read(GetPharmacy) returns (PharmacyResponse);
+    rpc update(UpdatePharmacy) returns (DoneResponse);
+    rpc del(DeletePharmacy) returns (DoneResponse);
+    rpc add(AddBranch) returns (DoneResponse);
 }

@@ -7,9 +7,9 @@ export class DeletePharmacy{
 
     async call(cnpj: string){
         try{ 
-            const alreadyExistPhamacy= await this.pharmacyRepository.findById(cnpj);
+            const alreadyExistPharmacy= await this.pharmacyRepository.findByCnpj(cnpj);
 
-            if(alreadyExistPhamacy){
+            if(alreadyExistPharmacy){
                 return await this.pharmacyRepository.delete(cnpj);
             }else{
                 return 'Pharmacy not exists'

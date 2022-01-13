@@ -8,4 +8,5 @@ export class Pharmacy{
     telephone:string;
     others:string;
     logoUrl:string;
+    cnpjMatriz?:string;
 }
