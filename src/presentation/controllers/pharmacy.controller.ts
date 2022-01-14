@@ -43,7 +43,7 @@ export class PharmacyController{
         return await this.deletePharmacy.call(cnpj)
     }
 
-    @Post()
+    @Post('/add/branchs')
     async addBranchs(@Body() pharmacy:Pharmacy): Promise<any> {
         return await this.addBranch.call(pharmacy)
     }
