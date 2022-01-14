@@ -42,8 +42,13 @@ message DoneResponse{
 }
 
 message FindResponse{
-    repeated pharmacy = 1;
+    Pharmacy pharmacy = 1;
 }
+
+message AddBranch{
+    Pharmacy pharmacy = 1;
+}
+
 
 
 service PharmacyService {
