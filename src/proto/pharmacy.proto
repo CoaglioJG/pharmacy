@@ -41,11 +41,16 @@ message DoneResponse{
     bool done = 1;
 }
 
+message FindResponse{
+    repeated pharmacy = 1;
+}
 
-service PharmacyService{
+
+service PharmacyService {
     rpc create(RegisterPharmacy) returns (PharmacyResponse);
-    rpc read(GetPharmacy) returns (PharmacyResponse);
+    rpc get(GetPharmacy) returns (PharmacyResponse);
     rpc update(UpdatePharmacy) returns (DoneResponse);
     rpc del(DeletePharmacy) returns (DoneResponse);
     rpc add(AddBranch) returns (DoneResponse);
+    rpc find(Empty) returns (FindResponse);
 }
